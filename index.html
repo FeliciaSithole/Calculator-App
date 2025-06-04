@@ -14,26 +14,26 @@
            </td> 
         </tr>
         <tr>
-            <td onclick="digitButtonPress(7)">7</td>
-            <td>8</td>
-            <td>9</td>
+            <td onclick="digitBtnPress(7)">7</td>
+            <td onclick="digitBtnPress(8)">8</td>
+            <td onclick="digitBtnPress(9)">9</td>
             <td>x</td>
         </tr>
         <tr>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
+            <td onclick="digitBtnPress(4)">4</td>
+            <td onclick="digitBtnPress(5)">5</td>
+            <td onclick="digitBtnPress(6)">6</td>
             <td>-</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
+            <td onclick="digitBtnPress(1)">1</td>
+            <td onclick="digitBtnPress(2)">2</td>
+            <td onclick="digitBtnPress(3)">3</td>
             <td>+</td>
         </tr>
         <tr>
             <td colspan="2">0</td>
-            <td>AC</td>
+            <td onclick="btnACPressed()">AC</td>
             <td>/</td>
         </tr>
         <tr>
@@ -42,8 +42,24 @@
     </table>
 
     <script>
+        var newLine = true; //Boolean variable. Determines if the next thing the user types should be on a new line
+
+        //Event handler for when any digit button is pressed
         function digitBtnPress(button){
-            document.getElementById("inputBox").value = button;
+
+            if(newLine){
+                document.getElementById("inputBox").value = button;
+                newLine = false;
+            } else {
+                 var currentValue = document.getElementById("inputBox").value;
+            document.getElementById("inputBox").value = currentValue + button;
+            }
+        }
+
+        //Even handler for when the AC botton is pressed
+        function btnACPressed(){
+            document.getElementById("inputBox").value = 0;
+            newLine = true;
         }
 
     </script>
