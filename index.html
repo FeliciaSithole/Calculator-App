@@ -14,7 +14,7 @@
            </td> 
         </tr>
         <tr>
-            <td>7</td>
+            <td onclick="digitButtonPress(7)">7</td>
             <td>8</td>
             <td>9</td>
             <td>x</td>
@@ -42,7 +42,10 @@
     </table>
 
     <script>
-        
+        function digitBtnPress(button){
+            document.getElementById("inputBox").value = button,
+        }
+
     </script>
 </body>
 </html>
