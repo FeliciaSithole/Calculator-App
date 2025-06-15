@@ -3,6 +3,8 @@ table{
     text-align: center;
     border-collapse: collapse;
     font: normal 3em Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 50vw;
 }
 
 tr{
@@ -62,4 +64,15 @@ td{
     .card-container{
         flex-direction: column;
     }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(images/download.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
